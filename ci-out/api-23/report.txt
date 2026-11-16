@@ -1,0 +1,18 @@
+Android API 23: 17/17 checks passed
+PASS  install and enable  api 23, 42 keys, no internet permission
+PASS  typing and auto-capitalise  'Hello world'
+PASS  auto-correct and undo  'Hello world teh '
+PASS  suggestions and punctuation  'Keyboard. Ok'
+PASS  next-word guess  'I am and '
+PASS  double space  'Go. '
+PASS  shift and caps lock  'ABCd'
+PASS  symbols  '12@#€'
+PASS  long press  '3'
+PASS  swipe typing  '' after 'As '
+PASS  emoji and symbol catalog  typed '😀😃?'; first category has 100 emoji, category 4 has 61
+PASS  clipboard history  'Copy me Copy me'
+PASS  one-handed mode  q at x=51 full, 257 right, 41 left
+PASS  floating keyboard  grip moved from y=910 to y=406; resize handle x 804 -> 621
+PASS  landscape  'Wide'
+PASS  settings, theme, number row  'A1'
+PASS  release build  'Hi there'
