@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Black tile, silver hexagon, three white hexagon keys. -->
+<!-- White tile, large blue hexagon, black thumbs-up with a gold fingernail. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp" android:height="48dp"
     android:viewportWidth="96" android:viewportHeight="96">
-    <path android:fillColor="#000000" android:pathData="M0,0h96v96h-96z" />
-    <path android:fillColor="#141414" android:strokeColor="#C0C0C0" android:strokeWidth="4"
-        android:pathData="M48,8 L83,28 L83,68 L48,88 L13,68 L13,28 Z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M36,27 L46,33 L46,45 L36,51 L26,45 L26,33 Z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M60,27 L70,33 L70,45 L60,51 L50,45 L50,33 Z" />
-    <path android:fillColor="#C0C0C0" android:pathData="M48,48 L58,54 L58,66 L48,72 L38,66 L38,54 Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M0,0h96v96h-96z" />
+    <path android:fillColor="#1F5FD6"
+        android:pathData="M48,4 L88,26 L88,70 L48,92 L8,70 L8,26 Z" />
+    <!-- fist -->
+    <path android:fillColor="#000000"
+        android:pathData="M28,50 L68,50 Q72,50 72,54 L72,70 Q72,77 65,77 L35,77 Q28,77 28,70 Z" />
+    <!-- thumb -->
+    <path android:fillColor="#000000"
+        android:pathData="M41,52 L41,25 Q41,17 48,17 Q55,17 55,25 L55,52 Z" />
+    <!-- fingernail -->
+    <path android:fillColor="#E0A800"
+        android:pathData="M43.5,24 Q43.5,21 48,21 Q52.5,21 52.5,24 L52.5,32 Q52.5,34.5 48,34.5 Q43.5,34.5 43.5,32 Z" />
+    <!-- finger gaps -->
+    <path android:strokeColor="#1F5FD6" android:strokeWidth="1.6" android:strokeLineCap="round"
+        android:pathData="M58,58 L72,58 M58,64 L72,64 M58,70 L72,70" />
 </vector>
