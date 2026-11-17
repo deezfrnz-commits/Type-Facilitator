@@ -44,7 +44,7 @@ object Layouts {
         '/' to "\\ ÷", '*' to "× ★ † ‡ •", '"' to "“ ” „ « »", '\'' to "’ ‘ ` \" ´", '!' to "¡", '?' to "¿ ‽", '%' to "‰ ℅",
         '&' to "§ ¶", '#' to "№", '=' to "≠ ≈ ∞ ≤ ≥", '@' to "© ® ™", ':' to ";", ';' to ":", '<' to "≤ « ‹", '>' to "≥ » ›",
         '^' to "↑ ↓ ← →", '°' to "℃ ℉", '•' to "· ◦ ‣", '√' to "∛ ∜", 'π' to "Π Ω μ", '∆' to "∇ ∑ ∏",
-        ',' to "; : ! ? ' \" - _", '.' to ", ? ! : ; ' \" - @ / …",
+        ',' to "' ; : ! ? \" - _", '.' to ", ? ! : ; ' \" - @ / …",
     )
 
     private fun ch(c: Char, numbers: Boolean = false): Key {
@@ -59,24 +59,25 @@ object Layouts {
     private fun row(s: String, numbers: Boolean = false) = s.map { ch(it, numbers) }
     private fun fn(label: String, code: Int, span: Float = 1f, icon: Int = 0) = Key(label, code, span, fn = true, icon = icon)
 
-    private fun bottom(left: Key, mode: Int): List<Key> {
+    private fun bottom(left: Key, mode: Int, space: Float = 5f): List<Key> {
         val second = when (mode) {
             MODE_URL -> Key("/", '/'.code, alts = listOf(":", "//", "?", "=", "&", "#", "-", "_"))
             MODE_EMAIL -> Key("@", '@'.code, alts = listOf("_", "-", "+", ","))
             else -> ch(',')
         }
         val dot = if (mode == MODE_TEXT) ch('.') else Key(".", '.'.code, alts = listOf(".com", ".org", ".net", ".co", ".io", ".edu", ".gov"))
-        return listOf(left, second, fn("", K.EMOJI, icon = Icons.EMOJI), Key("", K.SPACE, 5f, icon = Icons.SPACE), dot, fn("", K.ENTER, icon = Icons.ENTER))
+        return listOf(left, second, fn("", K.EMOJI, icon = Icons.EMOJI), Key("", K.SPACE, space, icon = Icons.SPACE), dot, fn("", K.ENTER, icon = Icons.ENTER))
     }
 
     fun letters(numberRow: Boolean, mode: Int): Layout {
         val rows = ArrayList<List<Key>>()
         if (numberRow) rows.add(row("1234567890"))
         rows.add(row("qwertyuiop", numberRow))
-        rows.add(row("asdfghjkl") + ch('\''))
+        rows.add(row("asdfghjkl"))
         rows.add(listOf(fn("", K.SHIFT, icon = Icons.SHIFT)) + row("zxcvbnm") + fn("", K.DEL, 2f, Icons.DEL))
-        rows.add(bottom(fn("?123", K.SYM), mode))
-        return Layout("letters", 10.5f, rows)
+        // Without the number row the widest row is 10 keys; with it the honeycomb stagger needs half a key more.
+        rows.add(bottom(fn("?123", K.SYM), mode, if (numberRow) 5f else 4.5f))
+        return Layout("letters", if (numberRow) 10.5f else 10f, rows)
     }
 
     fun symbols(mode: Int) = Layout(
