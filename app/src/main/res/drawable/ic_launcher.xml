@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- White tile, blue hexagon outline, a black thumb with a gold fingernail in the centre. -->
+<!-- White tile with diagonal black stripes outside a blue hexagon outline, a black thumb with a gold fingernail in the centre. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp" android:height="48dp"
     android:viewportWidth="96" android:viewportHeight="96">
     <path android:fillColor="#FFFFFF" android:pathData="M0,0h96v96h-96z" />
+    <path android:strokeColor="#000000" android:strokeWidth="5"
+        android:pathData="M-104,100 L0,-4 M-91,100 L13,-4 M-78,100 L26,-4 M-65,100 L39,-4 M-52,100 L52,-4 M-39,100 L65,-4 M-26,100 L78,-4 M-13,100 L91,-4 M0,100 L104,-4 M13,100 L117,-4 M26,100 L130,-4 M39,100 L143,-4 M52,100 L156,-4 M65,100 L169,-4 M78,100 L182,-4 M91,100 L195,-4" />
+    <path android:fillColor="#FFFFFF" android:pathData="M48,7 L84,27.5 L84,68.5 L48,89 L12,68.5 L12,27.5 Z" />
     <path android:strokeColor="#1F5FD6" android:strokeWidth="5" android:strokeLineJoin="miter"
         android:pathData="M48,7 L84,27.5 L84,68.5 L48,89 L12,68.5 L12,27.5 Z" />
     <path android:fillColor="#000000" android:pathData="M38.5,74 Q36.5,62 39.5,53 L39.5,34 Q39.5,22 48,22 Q56.5,22 56.5,34 L56.5,53 Q59.5,62 57.5,74 Q48,77 38.5,74 Z" />
