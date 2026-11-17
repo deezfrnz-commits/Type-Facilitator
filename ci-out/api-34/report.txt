@@ -1,5 +1,5 @@
 Android API 34: 17/17 checks passed
-PASS  install and enable  api 34, 42 keys, no internet permission
+PASS  install and enable  api 34, 41 keys, no internet permission
 PASS  typing and auto-capitalise  'Hello world'
 PASS  auto-correct and undo  'Hello world teh '
 PASS  suggestions and punctuation  'Keyboard. Ok'
@@ -11,7 +11,7 @@ PASS  long press  '3è'
 PASS  swipe typing  '' after 'Hello '
 PASS  emoji and symbol catalog  typed '😀😃?'; first category has 166 emoji, category 4 has 128
 PASS  clipboard history  'Copy me Copy me'
-PASS  one-handed mode  q at x=51 full, 257 right, 41 left
+PASS  one-handed mode  q at x=54 full, 259 right, 43 left
 PASS  floating keyboard  grip moved from y=1156 to y=656; resize handle x 813 -> 608
 PASS  landscape  'Wide'
 PASS  settings, theme, number row  'A1'
